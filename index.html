@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Pitbull: Hung Dữ Hay Hiểu Lầm? | Tuyên Truyền Bảo Vệ Thú Nuôi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+      
+        :root {
+            --dark-jungle: #1D2D2E; /* Màu xanh đậm gần như đen */
+            --hookers-green: #4F7942; /* Màu xanh lá sẫm */
+            --pistachio: #B0D782; /* Màu xanh lá nhạt, nổi bật */
+            --light-gray: #F0F0F0; /* Màu xám nhạt cho nền */
+            --light-text: #EAEAEA; /* Màu chữ sáng */
+        }
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+        }
+
+    
+        .custom-bg-dark, .custom-bg-hookers-green, .custom-bg-pistachio, 
+        .custom-bg-light-gray, .w3-image, figcaption, #content, .w3-modal {
+            opacity: 1 !important;
+        }
+
+      
+        .custom-bg-dark { background-color: var(--dark-jungle) !important; }
+        .custom-bg-hookers-green { background-color: var(--hookers-green) !important; }
+        .custom-bg-pistachio { background-color: var(--pistachio) !important; }
+        .custom-bg-light-gray { background-color: var(--light-gray) !important; }
+
+        .w3-text-light-gray { color: var(--light-text) !important; }
+        .w3-text-pistachio { color: var(--pistachio) !important; }
+        .w3-text-dark-jungle, .custom-text-dark-jungle { color: var(--dark-jungle) !important; }
+        .custom-border-pistachio { border-color: var(--pistachio) !important; }
+    
+        .w3-hover-custom-hookers-green:hover { background-color: var(--hookers-green) !important; color: var(--light-text) !important; }
+        .w3-hover-custom-pistachio:hover { background-color: var(--pistachio) !important; color: var(--dark-jungle) !important; }
+        .w3-hover-text-pistachio:hover { color: var(--pistachio) !important; }
+        
+        
+        .click-reveal-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .click-reveal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+    </style>
+</head>
+<body>
+
+
+<nav class="w3-top w3-animate-top" id="myNavbar">
+    <div class="w3-bar custom-bg-dark w3-card w3-wide w3-padding-small">
+        <a href="#home" class="w3-bar-item w3-button w3-text-light-gray w3-hover-text-pistachio">
+            <b>HÃY BẢO VỆ THÚ NUÔI CỦA CHÚNG TA</b>
+        </a>
+
+
+        <div class="w3-right w3-hide-small">
+            <a href="#home" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Trang Chủ</a>
+            <a href="#gioi-thieu" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Giới Thiệu</a>
+            <a href="#thuc-trang" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Thực Trạng</a>
+            <a href="#nguyen-nhan-1" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Nguyên Nhân</a>
+            <a href="#bien-phap" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Biện Pháp</a>
+            <a href="#gallery" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Kiến Thức</a>
+            <a href="#signup" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Đăng Ký</a>
+            <button onclick="document.getElementById('modalLogin').style.display='block'" 
+                    class="w3-bar-item w3-button w3-text-dark-jungle w3-hover-custom-hookers-green custom-bg-pistachio w3-round-large w3-margin-right w3-padding-small">
+                Đăng Nhập
+            </button>
+        </div>
+
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-text-light-gray" onclick="toggleFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</nav>
+
+
+<nav class="w3-sidebar w3-bar-block custom-bg-dark w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mobileDemo">
+    <a href="javascript:void(0)" onclick="toggleFunction()" class="w3-bar-item w3-button w3-large w3-padding-16">Đóng &times;</a>
+    <a href="#home" onclick="toggleFunction()" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Trang Chủ</a>
+    <a href="#gioi-thieu" onclick="toggleFunction()" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Giới Thiệu</a>
+    <a href="#thuc-trang" onclick="toggleFunction()" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Thực Trạng</a>
+    <a href="#nguyen-nhan-1" onclick="toggleFunction()" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Nguyên Nhân</a>
+    <a href="#bien-phap" onclick="toggleFunction()" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Biện Pháp</a>
+    <a href="#gallery" onclick="toggleFunction()" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Kiến Thức</a>
+    <a href="#signup" onclick="toggleFunction()" class="w3-bar-item w3-button w3-text-light-gray w3-hover-custom-hookers-green">Đăng Ký</a>
+    <button onclick="document.getElementById('modalLogin').style.display='block'; toggleFunction();" 
+            class="w3-bar-item w3-button w3-text-dark-jungle w3-hover-custom-hookers-green custom-bg-pistachio w3-round-large w3-margin-left w3-margin-top w3-padding-small">
+        Đăng Nhập
+    </button>
+</nav>
+
+
+<header class="w3-container w3-center w3-padding-64 custom-bg-hookers-green" id="home" style="margin-top:50px;">
+    <h1 class="w3-xlarge w3-text-light-gray"><b>PITBULL: HUNG DỮ HAY HIỂU LẦM?</b></h1>
+    <p class="w3-text-light-gray w3-medium">Pitbull là một giống chó hay bị lầm tưởng là thiếu an toàn, hung dữ. Tuy nhiên, có nhiều điều chúng ta chưa biết, sẽ được giải đáp sau đây.</p>
+    <div class="w3-center w3-padding-small">
+
+        <div class="w3-border-top w3-border-light-gray" style="width:50px"></div>
+    </div>
+</header>
+
+
+<main class="w3-container w3-padding-64 custom-bg-light-gray" id="content">
+
+    <section class="w3-row-padding w3-margin-top w3-margin-bottom" id="gioi-thieu">
+        <div class="w3-col m6 w3-padding w3-animate-left">
+            <figure class="w3-card w3-round-large w3-hover-shadow custom-bg-pistachio">
+               
+                <img src="uploaded:image_b71018.jpg-d07522a9-ee55-4900-97b0-d216580abbce" 
+                    alt="Ảnh mô tả Nội dung 1 - Động vật chung" 
+                    class="w3-image w3-round-large" 
+                    style="width:100%"
+                    onerror="this.onerror=null;this.src='https://www.burgesspetcare.com/wp-content/uploads/2024/01/pets.jpg'">
+                <figcaption class="w3-container w3-center w3-small w3-padding-tiny w3-text-dark-jungle custom-bg-light-gray w3-round-b-large">
+                    Ảnh minh họa động vật
+                </figcaption>
+            </figure>
+        </div>
+        <div class="w3-col m6 w3-padding w3-animate-right w3-container w3-display-container">
+            <h2 class="w3-xlarge w3-margin-top w3-padding-large w3-text-dark-jungle">Lời giới thiệu</h2>
+            <div class="custom-text-dark-jungle">
+                <p>Chúng ta mở cửa trái tim và ngôi nhà, đón nhận chó và mèo như những người bạn đồng hành trung thành nhất—họ là ánh nắng, là tiếng cười, là thành viên không thể thiếu của gia đình! Nhưng, liệu tình yêu đó có đủ lớn để bảo vệ chúng khỏi góc khuất tăm tối của sự vô tâm? Hiện thực phũ phàng đang giáng xuống những sinh linh bé nhỏ: bị ngược đãi tàn nhẫn, bị vứt bỏ lạnh lùng ngay khi không còn "đẹp", không còn giá trị kinh doanh hoặc bị đem đi làm thức ăn. Thậm chí, việc lơ là tiêm phòng đang đẩy chúng và cả cộng đồng vào vòng nguy hiểm của bệnh dại.</p>
+                <p>Đừng để trách nhiệm bị chôn vùi dưới sự thờ ơ! Chúng ta cần thức tỉnh ngay lập tức! Hãy biến tình yêu thương thành Hành Động Cụ Thể: Nâng cao nhận thức về nghĩa vụ thiêng liêng này, tuyên truyền mạnh mẽ về nuôi dưỡng nhân văn, và chấp hành nghiêm túc việc tiêm phòng đầy đủ. Hãy là người hùng mang lại sự an toàn và hạnh phúc trọn vẹn cho những trái tim bé bỏng ấy!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="w3-row-padding w3-margin-top w3-margin-bottom" id="thuc-trang">
+        <div class="w3-col m6 w3-padding w3-animate-left w3-container w3-display-container">
+            <h2 class="w3-xlarge w3-margin-top w3-padding-large w3-text-dark-jungle">THỰC TRẠNG VỀ PITBULL</h2>
+            <div class="custom-text-dark-jungle">
+                <p>Pitbull luôn là loài được săn đón của giới nhà “giàu”, chúng mang ngoại hình vạm vỡ và cường tráng khiến chúng nổi bật trước đám đông. Vì điều này nên nhiều người nuôi tìm đến chúng và chấp nhận chi trả với số tiền lớn để đem chúng về. Nhưng thực trạng đáng buồn khi những người biết huấn luyện, tâm lý Pitbull và hiểu rõ tính chất giống loài của chúng lại đếm trên đầu ngón tay (15-20%), số còn lại chỉ biết cho ăn mà bỏ qua xã hội hóa và kỷ luật.</p>
+                <p>Điều này cũng là nguyên nhân gây ra sự mất kiểm soát hành vi (đặc biệt đối với giống chó có bản năng mạnh mẽ) -khiến chúng dễ dàng bị kích động đối với những thứ bên ngoài (80% các vụ tai nạn liên quan đến Pitbull được ghi nhận có yếu tố thiếu kiểm soát từ chủ). Thay vì nhận trách nhiệm, chủ nuôi lại đổ lỗi cho bản năng, gắn mác "hung dữ" cho chính con vật vô tội. Như vậy, không phải bản chất Pitbull, mà chính sự vô trách nhiệm và thiếu kiến thức của chủ nuôi mới là nguyên nhân cốt lõi gây ra những vụ việc đáng tiếc.</p>
+            </div>
+        </div>
+        <div class="w3-col m6 w3-padding w3-animate-right">
+             <figure class="w3-card w3-round-large w3-hover-shadow custom-bg-hookers-green">
+              
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSeLMLA_AOZ3i-jmq7iTvbQqLaICIwh1mXDZdct1QjueV0QgLKd8_pMwpYo5AbBkrtEY716woOVvOfbtTCyq6Fb0Ga9wX6RS4z6EAmTpM&s=10" 
+                    alt="Ảnh mô tả Nội dung 2 - Pitbull bị hiểu lầm" 
+                    class="w3-image w3-round-large" 
+                    style="width:100%"
+                    onerror="this.onerror=null;this.src='https://www.prodograw.com/wp-content/uploads/2025/09/American-Pitbull-1.jpg'">
+                <figcaption class="w3-container w3-center w3-small w3-padding-tiny w3-text-light-gray custom-bg-dark w3-round-b-large">
+                    Ảnh minh họa: Pitbull 
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+ 
+    <section class="w3-row-padding w3-margin-top w3-margin-bottom" id="nguyen-nhan-1">
+        <div class="w3-col m6 w3-padding w3-animate-left">
+            <figure class="w3-card w3-round-large w3-hover-shadow custom-bg-pistachio">
+             
+                <img src="uploaded:image_b71b37.jpg-ac637ca0-670f-4e1b-9f58-e040cdb93963" 
+                    alt="Ảnh mô tả Nội dung 3 - Thiếu cam kết" 
+                    class="w3-image w3-round-large" 
+                    style="width:100%"
+                    onerror="this.onerror=null;this.src='https://4knines.com/cdn/shop/articles/How_to_Choose_the_Right_Dog_for_Your_Family_-_featured.jpg?v=1548903354'">
+                <figcaption class="w3-container w3-center w3-small w3-padding-tiny w3-text-dark-jungle custom-bg-light-gray w3-round-b-large">
+                    Ảnh minh họa: Thú nuôi là thành viên gia đình, không phải công cụ.
+                </figcaption>
+            </figure>
+        </div>
+        <div class="w3-col m6 w3-padding w3-animate-right w3-container w3-display-container">
+            <h2 class="w3-xlarge w3-margin-top w3-padding-large w3-text-dark-jungle">NGUYÊN NHÂN GỐC RỄ</h2>
+            <div class="custom-text-dark-jungle">
+                <p>Coi vật nuôi là công cụ: họ chỉ mua về nuôi với lý do “thấy nó đẹp” hoặc “dễ thương” hay mục đích kinh doanh nhưng khi vật nuôi không mang lại lợi ích hoặc không còn "đúng mốt" nữa, chúng sẽ bị vứt bỏ.</p>
+                <p>Thiếu cam kết lâu dài: người nuôi không nhận thức được việc nuôi động vật mang tính lâu dài về thời gian, chi phí và trách nhiệm. Thế nên khi họ (chuyển nhà, chi phí tăng, vật nuôi bị bệnh) thì họ dễ dàng vứt bỏ.</p>
+                <p>Hiểu lầm về trách nhiệm: Quan niệm sai lầm rằng việc nuôi dưỡng chỉ đơn giản là cho ăn, mà không bao gồm các khía cạnh quan trọng khác như chăm sóc y tế, huấn luyện, và đảm bảo môi trường sống an toàn. </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="w3-row-padding w3-margin-top w3-margin-bottom" id="nguyen-nhan-2">
+        <div class="w3-col m6 w3-padding w3-animate-left w3-container w3-display-container">
+            <h2 class="w3-xlarge w3-margin-top w3-padding-large w3-text-dark-jungle">NGUYÊN NHÂN Y TẾ CỘNG ĐỒNG</h2>
+            <div class="custom-text-dark-jungle">
+                <p>Không tiêm phòng đầy đủ: Đây là nguyên nhân trực tiếp dẫn đến tình trạng bệnh dại vẫn còn ở mức cao. Nhiều chủ nuôi chủ quan, lơ là hoặc không nắm rõ lịch tiêm phòng bắt buộc cho chó mèo.</p>
+                <p>Bỏ bê chăm sóc y tế: Không đưa vật nuôi đi khám định kỳ, không điều trị khi vật nuôi bị bệnh thông thường. Điều này khiến sức khỏe của chó mèo giảm sút nhanh chóng và dễ lây lan bệnh tật trong cộng đồng vật nuôi.</p>
+                <p>Thiếu kiểm soát sinh sản: Việc không triệt sản dẫn đến sinh sản ngoài ý muốn, làm tăng số lượng chó mèo bị lạc hoặc bị bỏ rơi trên đường phố, gây gánh nặng cho các tổ chức cứu hộ.</p>
+            </div>
+        </div>
+        <div class="w3-col m6 w3-padding w3-animate-right">
+             <figure class="w3-card w3-round-large w3-hover-shadow custom-bg-hookers-green">
+               
+                <img src="https://thuymydinh.vn/wp-content/uploads/2024/06/20230327_tiem-phong-cho-cho.jpg" 
+                    alt="Ảnh mô tả Nội dung 4 - Tiêm phòng" 
+                    class="w3-image w3-round-large" 
+                    style="width:100%"
+                    onerror="this.onerror=null;this.src='https://admin.petpro.com.vn/images/uploaded/Hinh%20Blog/vaccine%20ch%C3%B3%20m%C3%A8o/thumb-02-02.jpg'">
+                <figcaption class="w3-container w3-center w3-small w3-padding-tiny w3-text-light-gray custom-bg-dark w3-round-b-large">
+                    Ảnh minh họa: Tiêm phòng đầy đủ là trách nhiệm bắt buộc.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    
+    <section class="w3-container w3-padding-64 w3-center custom-bg-pistachio" id="bien-phap">
+        <h2 class="w3-xlarge w3-text-dark-jungle w3-center w3-margin-bottom"><b>BIỆN PHÁP VÀ HÀNH ĐỘNG CỤ THỂ</b></h2>
+        <div class="w3-row-padding w3-margin-top w3-center w3-text-dark-jungle">
+            
+            <div class="w3-col l6 m6 w3-margin-bottom w3-padding-large w3-animate-left">
+                <i class="fa fa-stethoscope w3-xxlarge w3-text-hookers-green"></i>
+                <h3 class="w3-large w3-text-dark-jungle w3-border-bottom w3-border-hookers-green w3-padding-small">1. Trách nhiệm Y tế bắt buộc</h3>
+                <p class="w3-medium w3-justify">
+                    <strong>Tiêm phòng Dại:</strong> Chấp hành nghiêm ngặt lịch tiêm phòng dại hàng năm cho vật nuôi. Cập nhật sổ tiêm chủng và đăng ký với cơ quan thú y địa phương.
+                </p>
+                <p class="w3-medium w3-justify">
+                    <strong>Kiểm soát sinh sản:</strong> Triệt sản chó mèo không có mục đích nhân giống để giảm thiểu số lượng vật nuôi bị bỏ rơi. Khám sức khỏe định kỳ 6 tháng/lần.
+                </p>
+            </div>
+            
+            <div class="w3-col l6 m6 w3-margin-bottom w3-padding-large w3-animate-right">
+                <i class="fa fa-handshake-o w3-xxlarge w3-text-hookers-green"></i>
+                <h3 class="w3-large w3-text-dark-jungle w3-border-bottom w3-border-hookers-green w3-padding-small">2. Huấn luyện và Xã hội hóa</h3>
+                <p class="w3-medium w3-justify">
+                    <strong>Huấn luyện cơ bản:</strong> Đặc biệt với các giống chó mạnh mẽ như Pitbull, cần tham gia các khóa huấn luyện cơ bản để kiểm soát hành vi và lệnh nghe lời.
+                </p>
+                <p class="w3-medium w3-justify">
+                    <strong>Xã hội hóa:</strong> Cho vật nuôi tiếp xúc an toàn với người và môi trường khác từ khi còn nhỏ. Luôn rọ mõm và đeo dây xích khi dắt chó ra nơi công cộng theo quy định.
+                </p>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <section class="w3-container w3-padding-64 w3-center custom-bg-hookers-green" id="gallery">
+        <h2 class="w3-xlarge w3-text-light-gray w3-center w3-margin-bottom"><b>KIẾN THỨC CHỦ ĐỘNG VỀ GIỐNG CHÓ</b></h2>
+        <p class="w3-text-light-gray w3-medium w3-margin-bottom">Bấm vào từng thẻ để xem thông tin chi tiết về đặc điểm và cách huấn luyện an toàn.</p>
+
+        <div class="w3-row-padding w3-center w3-section">
+            
+           
+            <article class="w3-col l4 m6 w3-margin-bottom w3-padding-small">
+                <div class="w3-card w3-round-large custom-bg-dark w3-hover-shadow click-reveal-card" onclick="toggleCard(this)">
+                    
+                    <div class="card-image-view">
+                        <img src="https://ezydog.com.au/cdn/shop/articles/Bull_Terrier-1024x576.png?v=1749105180&width=1024" 
+                            alt="Bull Terrier" 
+                            class="w3-image w3-round-large-top" 
+                            style="width:100%; height:300px; object-fit: cover;"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x300/B0D782/4F7942?text=Bull+Terrier'">
+                    </div>
+                
+                    <div class="card-content-view w3-container w3-padding-24 w3-text-light-gray w3-hide">
+                        <h3 class="w3-large w3-text-pistachio w3-border-bottom w3-border-pistachio w3-padding-small">Bull Terrier</h3>
+                        <p class="w3-small w3-justify">Tính cách: Thân thiện, năng động và hài hước. Rất trung thành với gia đình, nhưng cần được huấn luyện xã hội hóa từ sớm. Cần vận động mạnh mẽ hàng ngày.</p>
+                    </div>
+                    <div class="w3-container w3-padding-8 w3-text-light-gray w3-small card-default-caption">
+                        <p>Nhấn để xem thông tin chi tiết <i class="fa fa-hand-o-up"></i></p>
+                    </div>
+                </div>
+            </article>
+
+      
+            <article class="w3-col l4 m6 w3-margin-bottom w3-padding-small">
+                <div class="w3-card w3-round-large custom-bg-dark w3-hover-shadow click-reveal-card" onclick="toggleCard(this)">
+                    <div class="card-image-view">
+                        <img src="https://smart.dhgate.com/wp-content/uploads/2025/08/Blue20and20White20Staffordshire20Bull20Terrier20Dog_1736337071.webp" 
+                            alt="Staffordshire Bull Terrier" 
+                            class="w3-image w3-round-large-top" 
+                            style="width:100%; height:300px; object-fit: cover;"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x300/4F7942/F0F0F0?text=Staffordshire+Bull'">
+                    </div>
+                    <div class="card-content-view w3-container w3-padding-24 w3-text-light-gray w3-hide">
+                        <h3 class="w3-large w3-text-pistachio w3-border-bottom w3-border-pistachio w3-padding-small">Staffordshire Bull Terrier</h3>
+                        <p class="w3-small w3-justify">Tính cách: Được mệnh danh là "Chó vú em" (Nanny Dog) vì sự hiền lành và yêu trẻ con. Rất thông minh, dễ huấn luyện nhưng cần sự kiên nhẫn. Tuyệt đối trung thành.</p>
+                    </div>
+                     <div class="w3-container w3-padding-8 w3-text-light-gray w3-small card-default-caption">
+                        <p>Nhấn để xem thông tin chi tiết <i class="fa fa-hand-o-up"></i></p>
+                    </div>
+                </div>
+            </article>
+
+       
+            <article class="w3-col l4 m6 w3-margin-bottom w3-padding-small w3-hide-small">
+                <div class="w3-card w3-round-large custom-bg-dark w3-hover-shadow click-reveal-card" onclick="toggleCard(this)">
+                    <div class="card-image-view">
+                        <img src="https://bobosbestkennels.com/wp-content/uploads/2025/03/IMG_2286_edited-1024x965-1.jpg" 
+                            alt="American Bully" 
+                            class="w3-image w3-round-large-top" 
+                            style="width:100%; height:300px; object-fit: cover;"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x300/F0F0F0/4F7942?text=American+Bully'">
+                    </div>
+                    <div class="card-content-view w3-container w3-padding-24 w3-text-light-gray w3-hide">
+                        <h3 class="w3-large w3-text-pistachio w3-border-bottom w3-border-pistachio w3-padding-small">American Bully</h3>
+                        <p class="w3-small w3-justify">Tính cách: Được lai tạo để giảm thiểu sự hung hăng, cực kỳ hiền lành và điềm tĩnh. Chúng là giống chó gia đình tuyệt vời. Cần chế độ ăn uống và tập luyện đặc biệt.</p>
+                    </div>
+                     <div class="w3-container w3-padding-8 w3-text-light-gray w3-small card-default-caption">
+                        <p>Nhấn để xem thông tin chi tiết <i class="fa fa-hand-o-up"></i></p>
+                    </div>
+                </div>
+            </article>
+            
+        </div>
+
+    </section>
+
+<div class="w3-container w3-padding-64 custom-bg-dark" id="signup">
+    
+    <h3 class="w3-xlarge w3-text-pistachio w3-center"><b>Hãy đăng ký làm thành viên để tìm hiểu thêm</b></h3>
+    <div class="w3-row">
+
+        <div class="w3-col l6 m8 w3-padding w3-display-container w3-auto">
+            <form action="/action_page.php" target="_blank" class="w3-animate-zoom">
+            
+                <p><input class="w3-input w3-padding-16 w3-border w3-round-large custom-border-pistachio w3-text-dark-jungle" type="text" placeholder="Họ tên" required name="Name"></p>
+                <p><input class="w3-input w3-padding-16 w3-border w3-round-large custom-border-pistachio w3-text-dark-jungle" type="email" placeholder="Email" required name="Email"></p>
+                
+                <p class="w3-center">
+                    <button class="w3-button w3-padding-large w3-margin-bottom w3-round-large custom-bg-pistachio w3-text-dark-jungle w3-hover-custom-hookers-green" type="submit">
+                        <i class="fa fa-paper-plane"></i> ĐĂNG KÝ NGAY
+                    </button>
+                    
+                    <button type="button" onclick="document.getElementById('modalLogin').style.display='block'" 
+                            class="w3-button w3-padding-large w3-margin-bottom w3-round-large custom-bg-hookers-green w3-text-light-gray w3-hover-custom-pistachio">
+                        <i class="fa fa-sign-in"></i> ĐĂNG NHẬP
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="modalLogin" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:400px">
+        <header class="w3-container custom-bg-hookers-green w3-round-t-large"> 
+            <span onclick="document.getElementById('modalLogin').style.display='none'" 
+            class="w3-button w3-display-topright w3-large w3-text-light-gray w3-hover-text-pistachio">&times;</span>
+            <h2 class="w3-text-light-gray">Đăng Nhập Thành Viên</h2>
+        </header>
+        <div class="w3-container w3-white w3-padding-32">
+            <form class="w3-container" action="/action_page.php">
+                <p><input class="w3-input w3-border w3-margin-bottom w3-round-large" type="text" placeholder="Tên đăng nhập" required></p>
+                <p><input class="w3-input w3-border w3-margin-bottom w3-round-large" type="password" placeholder="Mật khẩu" required></p>
+                <p><button class="w3-button w3-block custom-bg-pistachio w3-text-dark-jungle w3-round-large w3-hover-custom-hookers-green" type="submit">Đăng Nhập</button></p>
+            </form>
+        </div>
+        <footer class="w3-container w3-padding-16 custom-bg-hookers-green w3-round-b-large w3-center">
+            <p class="w3-text-light-gray">Chưa có tài khoản? <a href="#signup" onclick="document.getElementById('modalLogin').style.display='none'" class="w3-text-pistachio w3-hover-text-light-gray">Đăng ký ngay</a></p>
+        </footer>
+    </div>
+</div>
+
+
+<footer class="w3-container w3-padding-32 w3-center custom-bg-dark w3-text-light-gray">
+    <p class="w3-medium">
+        <a href="#" class="w3-text-pistachio w3-hover-text-light-gray"><i class="fa fa-facebook-official"></i></a>
+        <a href="#" class="w3-text-pistachio w3-hover-text-light-gray"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="w3-text-pistachio w3-hover-text-light-gray"><i class="fa fa-instagram"></i></a>
+    </p>
+    <p class="w3-small">© 2025 Dự Án Tuyên Truyền Bảo Vệ Thú Nuôi</p>
+</footer>
+
+
+<script>
+   
+    function toggleFunction() {
+        var x = document.getElementById("mobileDemo");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    function toggleCard(cardElement) {
+        
+        var imageView = cardElement.querySelector('.card-image-view');
+        var contentView = cardElement.querySelector('.card-content-view');
+        
+        
+        if (cardElement.classList.contains('is-active')) {
+            cardElement.classList.remove('is-active');
+            imageView.classList.remove('w3-hide');
+            contentView.classList.add('w3-hide');
+            imageView.style.display = 'block';
+            contentView.style.display = 'none';
+
+        } else {
+            cardElement.classList.add('is-active');
+            imageView.classList.add('w3-hide');
+            contentView.classList.remove('w3-hide');
+            imageView.style.display = 'none';
+            contentView.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
