@@ -1,0 +1,55 @@
+:root {
+    --dark-jungle: #1D2D2E;
+    --hookers-green: #4F7942; 
+    --pistachio: #B0D782;
+    --light-gray: #F0F0F0; 
+    --light-text: #EAEAEA; 
+}
+
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+
+.custom-bg-dark, .custom-bg-hookers-green, .custom-bg-pistachio, 
+.custom-bg-light-gray, .w3-image, figcaption, #content, .w3-modal {
+    opacity: 1 !important;
+}
+
+
+.custom-bg-dark { background-color: var(--dark-jungle) !important; }
+.custom-bg-hookers-green { background-color: var(--hookers-green) !important; }
+.custom-bg-pistachio { background-color: var(--pistachio) !important; }
+.custom-bg-light-gray { background-color: var(--light-gray) !important; }
+
+
+.w3-text-light-gray { color: var(--light-text) !important; }
+.w3-text-pistachio { color: var(--pistachio) !important; }
+.w3-text-dark-jungle, .custom-text-dark-jungle { color: var(--dark-jungle) !important; }
+
+
+.custom-border-pistachio { border-color: var(--pistachio) !important; }
+
+
+.w3-hover-custom-hookers-green:hover { background-color: var(--hookers-green) !important; color: var(--light-text) !important; }
+.w3-hover-custom-pistachio:hover { background-color: var(--pistachio) !important; color: var(--dark-jungle) !important; }
+.w3-hover-text-pistachio:hover { color: var(--pistachio) !important; }
+
+
+
+.click-reveal-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.click-reveal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+
+.card-image-view img {
+    height: 300px; 
+    object-fit: cover;
+}
+
